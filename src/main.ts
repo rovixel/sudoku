@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { AudioManager } from './audio/AudioManager';
 import { getLang, setLang } from './i18n';
 import { computeGameSize } from './layout';
 import { Boot } from './scenes/Boot';
@@ -36,6 +37,15 @@ async function start() {
     scale: { mode: Phaser.Scale.FIT, autoCenter: Phaser.Scale.CENTER_BOTH },
     input: { activePointers: 3 },
     scene: [Boot, Preload, Menu, Game, MusicStreamer],
+  });
+
+  // Phaser only silences audio when the window loses focus. A page can be hidden without that
+  // (switching tabs in some browsers, a collapsed panel or hidden iframe on the host site),
+  // which left the music playing in the background — so pause on hidden as well.
+  game.events.on(Phaser.Core.Events.HIDDEN, () => game.sound.pauseAll());
+  game.events.on(Phaser.Core.Events.VISIBLE, () => {
+    game.sound.resumeAll();
+    AudioManager.onVisible();
   });
 
   // Rebuild the layout when the embed is resized or the device rotates.

@@ -17,6 +17,8 @@ export class AudioManager {
   private static queue: string[] = [];
   private static last = '';
   private static fadeTimer = 0;
+  /** Scene used to (re)start the playlist once the page becomes visible again. */
+  private static lastScene?: Phaser.Scene;
   static sfxOn = Storage.get('sfxOn', true);
   static musicOn = Storage.get('musicOn', true);
 
@@ -28,10 +30,18 @@ export class AudioManager {
   /** Starts the playlist if it isn't already running. Safe to call from every scene. */
   static playMusic(scene: Phaser.Scene) {
     this.sm = scene.sound;
+    this.lastScene = scene;
     if (!this.musicOn || this.current?.isPlaying) return;
+    // Never start music on a hidden page (e.g. a track finished downloading in a background tab).
+    if (document.hidden) return;
     // Paused because the page was hidden, or still waiting for the audio unlock: leave it be.
     if (this.current && (this.current.isPaused || scene.sound.locked)) return;
     this.next(scene);
+  }
+
+  /** Page became visible: start the playlist if it was held back while hidden. */
+  static onVisible() {
+    if (!this.current && this.lastScene) this.playMusic(this.lastScene);
   }
 
   /** A track finished downloading in the background: start the playlist if nothing is playing yet. */
