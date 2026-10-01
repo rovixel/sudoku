@@ -1,0 +1,166 @@
+{
+  "images": [
+    {
+      "key": "icon_close",
+      "url": "assets/images/icon_close.png",
+      "hash": "365008464799"
+    },
+    {
+      "key": "icon_erase",
+      "url": "assets/images/icon_erase.png",
+      "hash": "3e25c9d6a732"
+    },
+    {
+      "key": "icon_globe",
+      "url": "assets/images/icon_globe.png",
+      "hash": "324a15802b15"
+    },
+    {
+      "key": "icon_help",
+      "url": "assets/images/icon_help.png",
+      "hash": "c2c6e148aa7f"
+    },
+    {
+      "key": "icon_hint",
+      "url": "assets/images/icon_hint.png",
+      "hash": "3547505fb465"
+    },
+    {
+      "key": "icon_home",
+      "url": "assets/images/icon_home.png",
+      "hash": "75e4dba9775c"
+    },
+    {
+      "key": "icon_music",
+      "url": "assets/images/icon_music.png",
+      "hash": "db30499e4b43"
+    },
+    {
+      "key": "icon_notes",
+      "url": "assets/images/icon_notes.png",
+      "hash": "1e2b5338003d"
+    },
+    {
+      "key": "icon_pause",
+      "url": "assets/images/icon_pause.png",
+      "hash": "6c7f6f91c3bd"
+    },
+    {
+      "key": "icon_play",
+      "url": "assets/images/icon_play.png",
+      "hash": "c2668a4ccd5e"
+    },
+    {
+      "key": "icon_sound",
+      "url": "assets/images/icon_sound.png",
+      "hash": "7ee59d93a34b"
+    },
+    {
+      "key": "icon_undo",
+      "url": "assets/images/icon_undo.png",
+      "hash": "44e8ac76f520"
+    },
+    {
+      "key": "mascot",
+      "url": "assets/images/mascot.png",
+      "hash": "3ec891d61b75"
+    },
+    {
+      "key": "trophy",
+      "url": "assets/images/trophy.png",
+      "hash": "bc7483d58813"
+    }
+  ],
+  "audio": [
+    {
+      "key": "bgm_ambient",
+      "url": "assets/audio/bgm_ambient.mp3",
+      "kind": "music",
+      "hash": "f8d157914f64"
+    },
+    {
+      "key": "bgm_guitar",
+      "url": "assets/audio/bgm_guitar.mp3",
+      "kind": "music",
+      "hash": "e5f750d951b5"
+    },
+    {
+      "key": "bgm_lofi",
+      "url": "assets/audio/bgm_lofi.mp3",
+      "kind": "music",
+      "hash": "c23e1f015005"
+    },
+    {
+      "key": "bgm_marimba",
+      "url": "assets/audio/bgm_marimba.mp3",
+      "kind": "music",
+      "hash": "59e3c05b1f42"
+    },
+    {
+      "key": "bgm_piano",
+      "url": "assets/audio/bgm_piano.mp3",
+      "kind": "music",
+      "hash": "7a7e9b357365"
+    },
+    {
+      "key": "sfx_click",
+      "url": "assets/audio/sfx_click.mp3",
+      "kind": "sfx",
+      "hash": "8016cc48e533"
+    },
+    {
+      "key": "sfx_complete",
+      "url": "assets/audio/sfx_complete.mp3",
+      "kind": "sfx",
+      "hash": "40f77ff06f13"
+    },
+    {
+      "key": "sfx_correct",
+      "url": "assets/audio/sfx_correct.mp3",
+      "kind": "sfx",
+      "hash": "bbd08b2bb417"
+    },
+    {
+      "key": "sfx_erase",
+      "url": "assets/audio/sfx_erase.mp3",
+      "kind": "sfx",
+      "hash": "de9871395261"
+    },
+    {
+      "key": "sfx_hint",
+      "url": "assets/audio/sfx_hint.mp3",
+      "kind": "sfx",
+      "hash": "3ee99a26d159"
+    },
+    {
+      "key": "sfx_lose",
+      "url": "assets/audio/sfx_lose.mp3",
+      "kind": "sfx",
+      "hash": "260ededcec4d"
+    },
+    {
+      "key": "sfx_notes",
+      "url": "assets/audio/sfx_notes.mp3",
+      "kind": "sfx",
+      "hash": "f498b9a3f1b0"
+    },
+    {
+      "key": "sfx_undo",
+      "url": "assets/audio/sfx_undo.mp3",
+      "kind": "sfx",
+      "hash": "2b9d4061805c"
+    },
+    {
+      "key": "sfx_win",
+      "url": "assets/audio/sfx_win.mp3",
+      "kind": "sfx",
+      "hash": "80e3c9299b66"
+    },
+    {
+      "key": "sfx_wrong",
+      "url": "assets/audio/sfx_wrong.mp3",
+      "kind": "sfx",
+      "hash": "c816c500c9de"
+    }
+  ]
+}
