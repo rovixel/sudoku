@@ -56,7 +56,11 @@ export class NeoButton extends Phaser.GameObjects.Container {
     this.redraw();
     this.setSize(w, h).setInteractive({ useHandCursor: true });
 
+    // Only a press that starts on the button counts: a finger that lands elsewhere and is lifted
+    // over it (e.g. while holding to charge a jump) must not click it.
+    let pressed = false;
     const press = (down: boolean) => {
+      pressed = down;
       const s = this.style.shadow ?? 0;
       this.face.setPosition(down ? s : 0, down ? s : 0);
       this.shadowG.setVisible(!down);
@@ -64,6 +68,7 @@ export class NeoButton extends Phaser.GameObjects.Container {
     this.on('pointerdown', () => press(true));
     this.on('pointerout', () => press(false));
     this.on('pointerup', () => {
+      if (!pressed) return;
       press(false);
       if (opts.sound !== false) AudioManager.playSfx(scene, 'sfx_click', 0.6);
       onClick();

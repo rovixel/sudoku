@@ -122,9 +122,10 @@ let lang: Lang = initialLang();
 export const t = () => TABLES[lang];
 export const getLang = () => lang;
 
-export function setLang(next: Lang) {
+/** `remember` is for the player's own choice; applying the starting language must not save it, or ?lang= would stop working. */
+export function setLang(next: Lang, remember = true) {
   lang = next;
-  Storage.set('lang', next);
+  if (remember) Storage.set('lang', next);
   document.documentElement.lang = next === 'zh' ? 'zh-CN' : 'en';
   document.title = TABLES[next].title;
 }

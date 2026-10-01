@@ -23,7 +23,7 @@ async function loadFonts() {
 }
 
 async function start() {
-  setLang(getLang());
+  setLang(getLang(), false);
   await loadFonts();
   const v = viewport();
   const size = computeGameSize(v.w, v.h);
