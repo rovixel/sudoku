@@ -47,3 +47,7 @@ src/ui/                theme and shared widgets
 src/audio/             music playlist and sound effects
 public/assets/         images, audio and the asset manifest
 ```
+
+## License
+
+[MIT](LICENSE) © rovixel
