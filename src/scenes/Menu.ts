@@ -3,6 +3,7 @@ import { AudioManager } from '../audio/AudioManager';
 import { bestScoreKey, difficultyPopup } from '../game/DifficultyPopup';
 import { fmtNum, t } from '../i18n';
 import { layoutOf } from '../layout';
+import { takeStartDifficulty } from '../startOptions';
 import { Storage } from '../storage';
 import type { SavedGame } from '../sudoku/SudokuGame';
 import { DIFFICULTY_ORDER, type Difficulty } from '../sudoku/rules';
@@ -45,6 +46,14 @@ export class Menu extends Phaser.Scene {
 
     const diff = difficultyPopup(this, L, (d) => this.startGame(d));
     const saved = Storage.get<SavedGame | null>('save', null);
+
+    // ?difficulty= from the host page starts a new puzzle right away, but never
+    // over a saved game: then the menu shows so the player can continue it.
+    const start = takeStartDifficulty();
+    if (start && !saved) {
+      this.startGame(start);
+      return;
+    }
 
     // Right/bottom column: continue card, new game, best scores.
     const colW = land ? 380 : L.wd - 40;
