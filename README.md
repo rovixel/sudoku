@@ -34,6 +34,8 @@ npm run build    # static build in dist/
 
 `?lang=en` or `?lang=zh` sets the starting language; a player's own choice is remembered after that.
 
+`?difficulty=easy`, `medium`, `hard` or `expert` skips the menu and starts a new puzzle at that level. If the player has a saved game, the menu shows instead so they can continue it.
+
 ## Project structure
 
 ```
